@@ -1,1 +1,1 @@
-console.log("Aquastade publicité chargée");
+console.log("Aquastade publicite chargee");
