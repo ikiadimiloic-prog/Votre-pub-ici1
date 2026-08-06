@@ -1,0 +1,73 @@
+/* RESET */
+
+*{
+
+}
+
+/* BODY */
+
+body{
+
+}
+
+/* VIDEO */
+
+#background-video{
+
+}
+
+/* OVERLAY */
+
+.overlay{
+
+}
+
+/* HEADER */
+
+header{
+
+}
+
+header h1{
+
+}
+
+/* CARTES */
+
+.cards{
+
+}
+
+.card{
+
+}
+
+/* BOUTON */
+
+.button{
+
+}
+
+/* FOOTER */
+
+footer{
+
+}
+
+/* QR CODE */
+
+.qrcode{
+
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeIn{}
+
+@keyframes float{}
+
+@keyframes pulse{}
+
+@keyframes glow{}
+
+@keyframes wave{}
