@@ -1,40 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affichage Publicitaire - Aquastade</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
 <body>
 
-    <!-- Vidéo de fond (source + attributs indispensables pour le lancement auto) -->
+    <!-- 🎥 Vidéo de fond -->
     <video id="background-video" autoplay loop muted playsinline>
         <source src="video/piscine.mp4" type="video/mp4">
     </video>
 
-    <!-- Overlay bleu -->
+    <!-- 🌊 Overlay & Effets de Lumière Eau -->
     <div class="overlay"></div>
-
-    <!-- Lumières -->
     <div class="light light1"></div>
     <div class="light light2"></div>
 
-    <!-- Contenu principal -->
-    <main>
+    <!-- 🖥️ Contenu Principal 16/9 -->
+    <main class="ad-container">
 
+        <!-- Header : Titre percutant -->
         <header>
-            <img class="logo" src="img/logo.png" alt="Logo Aquastade">
-            <h1>Aquastade</h1>
-            <p>Bienvenue sur votre espace d'affichage</p>
+            <div class="badge-tag"><i class="fa-solid fa-bullhorn"></i> EMPLACEMENT DISPONIBLE</div>
+            <h1>Affichez votre entreprise ici !</h1>
+            <p class="subtitle">Profitez d'un écran d'affichage dynamique au cœur de l'Aquastade</p>
         </header>
 
+        <!-- Dynamic Counter : Chiffre Clé -->
+        <section class="stat-banner glass-card">
+            <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+            <div class="stat-info">
+                <div class="stat-number"><span id="counter">0</span> +</div>
+                <div class="stat-label">Visiteurs locaux touchés chaque année</div>
+            </div>
+        </section>
+
+        <!-- 🏊 Cartes : Arguments / Avantages -->
         <section class="cards">
-            <!-- Injectez vos cartes ici via HTML ou votre script JS -->
+            <div class="card glass-card">
+                <div class="card-icon"><i class="fa-solid fa-eye"></i></div>
+                <h3>Forte visibilité</h3>
+                <p>Touchez des milliers de visiteurs locaux chaque mois direct sur nos écrans.</p>
+            </div>
+
+            <div class="card glass-card">
+                <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
+                <h3>Cible captive</h3>
+                <p>Atteignez directement les familles, sportifs et résidents du secteur.</p>
+            </div>
+
+            <div class="card glass-card">
+                <div class="card-icon"><i class="fa-solid fa-tv"></i></div>
+                <h3>Format dynamique</h3>
+                <p>Diffusion en haute définition tout au long de la journée sans interruption.</p>
+            </div>
         </section>
 
-        <section class="cta">
-            <!-- Bouton ou appel à l'action -->
-        </section>
-
+        <!-- 📱 Footer & CTA avec QR Code -->
         <footer>
-            <!-- Pied de page -->
+            <div class="cta-text">
+                <h2>Réservez cet emplacement publicitaire dès aujourd'hui !</h2>
+                <div class="contact-info">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>contact@aquastade.fr</span>
+                </div>
+            </div>
+
+            <div class="qrcode-wrapper">
+                <img class="qrcode pulse" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=mailto:contact@aquastade.fr" alt="QR Code Contact">
+                <span class="qr-label">Scannez pour réserver</span>
+            </div>
         </footer>
 
     </main>
 
     <script src="script.js"></script>
-
 </body>
+</html>
