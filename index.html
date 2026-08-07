@@ -1,7 +1,9 @@
 <body>
 
-    <!-- Vidéo de fond -->
-    <video id="background-video"></video>
+    <!-- Vidéo de fond (source + attributs indispensables pour le lancement auto) -->
+    <video id="background-video" autoplay loop muted playsinline>
+        <source src="video/piscine.mp4" type="video/mp4">
+    </video>
 
     <!-- Overlay bleu -->
     <div class="overlay"></div>
@@ -10,33 +12,29 @@
     <div class="light light1"></div>
     <div class="light light2"></div>
 
-    <!-- Contenu -->
+    <!-- Contenu principal -->
     <main>
 
         <header>
-
-            <img class="logo">
-
-            <h1></h1>
-
-            <p></p>
-
+            <img class="logo" src="img/logo.png" alt="Logo Aquastade">
+            <h1>Aquastade</h1>
+            <p>Bienvenue sur votre espace d'affichage</p>
         </header>
 
         <section class="cards">
-
+            <!-- Injectez vos cartes ici via HTML ou votre script JS -->
         </section>
 
         <section class="cta">
-
+            <!-- Bouton ou appel à l'action -->
         </section>
 
         <footer>
-
+            <!-- Pied de page -->
         </footer>
 
     </main>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
