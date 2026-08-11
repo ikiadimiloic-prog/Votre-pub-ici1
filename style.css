@@ -21,7 +21,7 @@
 html, body {
     width: 100vw;
     height: 100vh;
-    overflow: hidden; /* Empêche le défilement sur écran d'affichage */
+    overflow: hidden;
     font-family: var(--font-family);
     color: var(--text-main);
     background-color: #000000;
@@ -40,7 +40,6 @@ html, body {
     z-index: 1;
 }
 
-/* Voile sombre pour accentuer le contraste du texte */
 .overlay {
     position: fixed;
     top: 0;
@@ -55,7 +54,6 @@ html, body {
     z-index: 2;
 }
 
-/* Effets de halos lumineux rappelant l'eau */
 .light {
     position: fixed;
     border-radius: 50%;
@@ -89,13 +87,12 @@ html, body {
     z-index: 3;
     width: 100vw;
     height: 100vh;
-    padding: 3.5rem 5rem;
+    padding: 2.5rem 4rem; /* Padding légèrement réduit pour laisser plus de place aux grands textes */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-/* Style de carte en verre dépoli */
 .glass-card {
     background: var(--glass-bg);
     backdrop-filter: blur(16px);
@@ -106,7 +103,7 @@ html, body {
 }
 
 /* ==========================================================================
-   4. EN-TÊTE (HEADER)
+   4. EN-TÊTE (HEADER) - TEXTES AGRANDIS
    ========================================================================== */
 header {
     display: flex;
@@ -119,11 +116,11 @@ header {
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    padding: 0.5rem 1.25rem;
+    padding: 0.6rem 1.5rem;
     background: linear-gradient(90deg, #ff4e50, #f9d423);
     color: #ffffff;
-    font-weight: 700;
-    font-size: 0.95rem;
+    font-weight: 800;
+    font-size: 1.15rem; /* Augmenté (anciennement 0.95rem) */
     letter-spacing: 1.5px;
     text-transform: uppercase;
     border-radius: 50px;
@@ -131,7 +128,7 @@ header {
 }
 
 header h1 {
-    font-size: 3.5rem;
+    font-size: 4.5rem; /* Augmenté (anciennement 3.5rem) */
     font-weight: 800;
     line-height: 1.1;
     background: linear-gradient(90deg, #ffffff 40%, var(--primary-color));
@@ -141,13 +138,13 @@ header h1 {
 }
 
 .subtitle {
-    font-size: 1.4rem;
+    font-size: 1.75rem; /* Augmenté (anciennement 1.4rem) */
     color: var(--text-muted);
-    font-weight: 400;
+    font-weight: 500;
 }
 
 /* ==========================================================================
-   5. BANIÈRE STATISTIQUE (STAT BANNER)
+   5. BANNIÈRE STATISTIQUE (STAT BANNER) - TEXTES AGRANDIS
    ========================================================================== */
 .stat-banner {
     display: flex;
@@ -155,18 +152,18 @@ header h1 {
     gap: 2rem;
     padding: 1.5rem 2.5rem;
     max-width: fit-content;
-    border-left: 5px solid var(--primary-color);
+    border-left: 6px solid var(--primary-color);
 }
 
 .stat-icon {
-    width: 70px;
-    height: 70px;
+    width: 85px; /* Augmenté (anciennement 70px) */
+    height: 85px;
     background: rgba(0, 210, 255, 0.15);
-    border-radius: 16px;
+    border-radius: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.2rem;
+    font-size: 2.8rem; /* Augmenté (anciennement 2.2rem) */
     color: var(--primary-color);
 }
 
@@ -176,20 +173,21 @@ header h1 {
 }
 
 .stat-number {
-    font-size: 3rem;
+    font-size: 4rem; /* Augmenté (anciennement 3rem) */
     font-weight: 900;
     color: #ffffff;
     line-height: 1;
 }
 
 .stat-label {
-    font-size: 1.1rem;
+    font-size: 1.35rem; /* Augmenté (anciennement 1.1rem) */
     color: var(--text-muted);
     margin-top: 0.3rem;
+    font-weight: 500;
 }
 
 /* ==========================================================================
-   6. CARTES D'ARGUMENTS (CARDS GRID)
+   6. CARTES D'ARGUMENTS (CARDS GRID) - TEXTES AGRANDIS
    ========================================================================== */
 .cards {
     display: grid;
@@ -198,51 +196,51 @@ header h1 {
 }
 
 .card {
-    padding: 2rem;
+    padding: 2.2rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.2rem;
     transition: transform 0.3s ease;
 }
 
 .card-icon {
-    width: 55px;
-    height: 55px;
+    width: 65px; /* Augmenté (anciennement 55px) */
+    height: 65px;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    border-radius: 12px;
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.6rem;
+    font-size: 2rem; /* Augmenté (anciennement 1.6rem) */
     color: #ffffff;
     box-shadow: 0 8px 20px rgba(0, 114, 255, 0.3);
 }
 
 .card h3 {
-    font-size: 1.5rem;
+    font-size: 1.85rem; /* Augmenté (anciennement 1.5rem) */
     font-weight: 700;
     color: #ffffff;
 }
 
 .card p {
-    font-size: 1.05rem;
+    font-size: 1.25rem; /* Augmenté (anciennement 1.05rem) */
     color: var(--text-muted);
-    line-height: 1.5;
+    line-height: 1.45;
 }
 
 /* ==========================================================================
-   7. PIED DE PAGE & QR CODE (FOOTER)
+   7. PIED DE PAGE & QR CODE (FOOTER) - TEXTES AGRANDIS
    ========================================================================== */
 footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 1.5rem;
+    padding-top: 1.2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .cta-text h2 {
-    font-size: 1.8rem;
+    font-size: 2.2rem; /* Augmenté (anciennement 1.8rem) */
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
@@ -251,33 +249,33 @@ footer {
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    font-size: 1.4rem;
+    font-size: 1.75rem; /* Augmenté (anciennement 1.4rem) */
     color: var(--primary-color);
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .qrcode-wrapper {
     display: flex;
     align-items: center;
-    gap: 1.2rem;
+    gap: 1.5rem;
     background: rgba(255, 255, 255, 0.1);
-    padding: 0.8rem 1.5rem;
-    border-radius: 16px;
+    padding: 1rem 1.8rem;
+    border-radius: 18px;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .qrcode {
-    width: 90px;
-    height: 90px;
-    border-radius: 10px;
+    width: 110px; /* Augmenté (anciennement 90px) pour une meilleure lisibilité du QR */
+    height: 110px;
+    border-radius: 12px;
     background: #ffffff;
-    padding: 5px;
+    padding: 6px;
 }
 
 .qr-label {
-    font-size: 1rem;
-    font-weight: 600;
-    max-width: 100px;
+    font-size: 1.25rem; /* Augmenté (anciennement 1rem) */
+    font-weight: 700;
+    max-width: 130px;
     line-height: 1.3;
     color: #ffffff;
 }
