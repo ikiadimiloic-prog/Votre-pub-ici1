@@ -19,9 +19,10 @@
 }
 
 html, body {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden; /* Empêche le débordement horizontal */
+    overflow-y: auto;   /* Permet le défilement vertical au zoom pour éviter le rognage */
     font-family: var(--font-family);
     color: var(--text-main);
     background-color: #000000;
@@ -80,17 +81,21 @@ html, body {
 }
 
 /* ==========================================================================
-   3. CONTENEUR PRINCIPAL 16/9 & EFFET GLASSMORPHISM
+   3. CONTENEUR PRINCIPAL & EFFET GLASSMORPHISM
    ========================================================================== */
 .ad-container {
     position: relative;
     z-index: 3;
-    width: 100vw;
-    height: 100vh;
-    padding: 2.5rem 4rem; /* Padding légèrement réduit pour laisser plus de place aux grands textes */
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    min-height: 100vh;
+    height: auto; /* Permet d'agrandir la hauteur lors d'un zoom */
+    padding: 2.5rem 4rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 2rem; /* Espace de sécurité entre les sections au zoom */
 }
 
 .glass-card {
@@ -103,7 +108,7 @@ html, body {
 }
 
 /* ==========================================================================
-   4. EN-TÊTE (HEADER) - TEXTES AGRANDIS
+   4. EN-TÊTE (HEADER) - TEXTES ADAPTABLES
    ========================================================================== */
 header {
     display: flex;
@@ -120,7 +125,7 @@ header {
     background: linear-gradient(90deg, #ff4e50, #f9d423);
     color: #ffffff;
     font-weight: 800;
-    font-size: 1.15rem; /* Augmenté (anciennement 0.95rem) */
+    font-size: 1.15rem;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     border-radius: 50px;
@@ -128,7 +133,7 @@ header {
 }
 
 header h1 {
-    font-size: 4.5rem; /* Augmenté (anciennement 3.5rem) */
+    font-size: clamp(2.5rem, 5vw, 4.5rem); /* Adapte la taille automatiquement */
     font-weight: 800;
     line-height: 1.1;
     background: linear-gradient(90deg, #ffffff 40%, var(--primary-color));
@@ -138,13 +143,13 @@ header h1 {
 }
 
 .subtitle {
-    font-size: 1.75rem; /* Augmenté (anciennement 1.4rem) */
+    font-size: clamp(1.2rem, 2vw, 1.75rem);
     color: var(--text-muted);
     font-weight: 500;
 }
 
 /* ==========================================================================
-   5. BANNIÈRE STATISTIQUE (STAT BANNER) - TEXTES AGRANDIS
+   5. BANNIÈRE STATISTIQUE (STAT BANNER)
    ========================================================================== */
 .stat-banner {
     display: flex;
@@ -156,14 +161,15 @@ header h1 {
 }
 
 .stat-icon {
-    width: 85px; /* Augmenté (anciennement 70px) */
+    width: 85px;
     height: 85px;
+    flex-shrink: 0;
     background: rgba(0, 210, 255, 0.15);
     border-radius: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.8rem; /* Augmenté (anciennement 2.2rem) */
+    font-size: 2.8rem;
     color: var(--primary-color);
 }
 
@@ -173,25 +179,25 @@ header h1 {
 }
 
 .stat-number {
-    font-size: 4rem; /* Augmenté (anciennement 3rem) */
+    font-size: clamp(2.5rem, 4vw, 4rem);
     font-weight: 900;
     color: #ffffff;
     line-height: 1;
 }
 
 .stat-label {
-    font-size: 1.35rem; /* Augmenté (anciennement 1.1rem) */
+    font-size: 1.35rem;
     color: var(--text-muted);
     margin-top: 0.3rem;
     font-weight: 500;
 }
 
 /* ==========================================================================
-   6. CARTES D'ARGUMENTS (CARDS GRID) - TEXTES AGRANDIS
+   6. CARTES D'ARGUMENTS (CARDS GRID) - RÉACTIVES AU ZOOM
    ========================================================================== */
 .cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* S'adapte sur plusieurs lignes au zoom */
     gap: 2rem;
 }
 
@@ -204,43 +210,46 @@ header h1 {
 }
 
 .card-icon {
-    width: 65px; /* Augmenté (anciennement 55px) */
+    width: 65px;
     height: 65px;
+    flex-shrink: 0;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem; /* Augmenté (anciennement 1.6rem) */
+    font-size: 2rem;
     color: #ffffff;
     box-shadow: 0 8px 20px rgba(0, 114, 255, 0.3);
 }
 
 .card h3 {
-    font-size: 1.85rem; /* Augmenté (anciennement 1.5rem) */
+    font-size: 1.85rem;
     font-weight: 700;
     color: #ffffff;
 }
 
 .card p {
-    font-size: 1.25rem; /* Augmenté (anciennement 1.05rem) */
+    font-size: 1.25rem;
     color: var(--text-muted);
     line-height: 1.45;
 }
 
 /* ==========================================================================
-   7. PIED DE PAGE & QR CODE (FOOTER) - TEXTES AGRANDIS
+   7. PIED DE PAGE & QR CODE (FOOTER)
    ========================================================================== */
 footer {
     display: flex;
+    flex-wrap: wrap; /* Évite les chevauchements si le texte grossit */
     align-items: center;
     justify-content: space-between;
+    gap: 1.5rem;
     padding-top: 1.2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .cta-text h2 {
-    font-size: 2.2rem; /* Augmenté (anciennement 1.8rem) */
+    font-size: clamp(1.5rem, 2.5vw, 2.2rem);
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
@@ -249,7 +258,7 @@ footer {
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    font-size: 1.75rem; /* Augmenté (anciennement 1.4rem) */
+    font-size: 1.75rem;
     color: var(--primary-color);
     font-weight: 700;
 }
@@ -265,15 +274,16 @@ footer {
 }
 
 .qrcode {
-    width: 110px; /* Augmenté (anciennement 90px) pour une meilleure lisibilité du QR */
+    width: 110px;
     height: 110px;
+    flex-shrink: 0;
     border-radius: 12px;
     background: #ffffff;
     padding: 6px;
 }
 
 .qr-label {
-    font-size: 1.25rem; /* Augmenté (anciennement 1rem) */
+    font-size: 1.25rem;
     font-weight: 700;
     max-width: 130px;
     line-height: 1.3;
